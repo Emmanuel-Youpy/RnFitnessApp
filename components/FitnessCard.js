@@ -12,7 +12,7 @@ const FitnessCard = () => {
     <View>
       {fitnessData.map((item, key) => {
         return (
-        <TouchableOpacity style={{alignItems:'center', justifyContent:'center', margin:10}} key={key} onPress={()=> navigation.navigate('Workout', {image:item.image, exercises:item.excersises, id:item.id})}>
+        <TouchableOpacity style={{alignItems:'center', justifyContent:'center', margin:10}} key={key} onPress={()=> navigation.navigate('Workout', {image:item.image, excersises:item.excersises, id:item.id})}>
             <Image style={{height:150, width:'95%', borderRadius:10}} source={{uri:item.image}}/>
             <Text style={{position:'absolute', fontWeight:'bold', fontSize:16, color:'white', left:20, top:25}}>{item.name}</Text>
             <MaterialCommunityIcons style={{position:'absolute', color:'white', bottom:15, left:20}} name="lightning-bolt" size={24} color="black" />
