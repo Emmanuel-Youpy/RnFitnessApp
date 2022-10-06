@@ -1,25 +1,25 @@
-import { View, Text, SafeAreaView, Image } from 'react-native'
-import React, { useEffect, useState } from 'react'
-import { useNavigation } from '@react-navigation/native';
+import { View, Text, SafeAreaView, Image } from "react-native";
+import React, { useEffect, useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 const RestScreen = () => {
-    const navigation = useNavigation();
-    let timer = 0;
-    const [timeLeft, setTimeLeft ] = useState(3)
-    const startTime=() => {
-        setTimeout(() => {
-            if(timeLeft <=0){
-                navigation.goBack();
-                clearTimeout(timer)
-            }
-            setTimeLeft(timeLeft -1)
-        },1000)
-    }
-    useEffect(() => {
-     startTime()
-     return () => clearTimeout(timer);
-    },)
-    
+  const navigation = useNavigation();
+  let timer = 0;
+  const [timeLeft, setTimeLeft] = useState(3);
+  const startTime = () => {
+    setTimeout(() => {
+      if (timeLeft <= 0) {
+        navigation.goBack();
+        clearTimeout(timer);
+      }
+      setTimeLeft(timeLeft - 1);
+    }, 1000);
+  };
+  useEffect(() => {
+    startTime();
+    return () => clearTimeout(timer);
+  });
+
   return (
     <SafeAreaView>
       <Image
@@ -29,12 +29,28 @@ const RestScreen = () => {
         }}
         style={{ width: "100%", height: 420 }}
       />
-      <Text style={{fontSize:30,
-      fontWeight:'bold', marginTop:50, textAlign:'center'}}>TAKE A BREAK</Text>
-      <Text style={{fontSize:30,
-      fontWeight:'300', marginTop:50, textAlign:'center'}}>{timeLeft}</Text>
+      <Text
+        style={{
+          fontSize: 30,
+          fontWeight: "bold",
+          marginTop: 50,
+          textAlign: "center",
+        }}
+      >
+        TAKE A BREAK
+      </Text>
+      <Text
+        style={{
+          fontSize: 30,
+          fontWeight: "300",
+          marginTop: 50,
+          textAlign: "center",
+        }}
+      >
+        {timeLeft}
+      </Text>
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default RestScreen
+export default RestScreen;

@@ -25,7 +25,7 @@ const WorkoutScreen = () => {
 
             </TouchableOpacity>
             )
-        
+          
         })}
     </ScrollView>
     <TouchableOpacity onPress={()=> navigation.navigate('Fit', {excersises:route.params.excersises})} style={{backgroundColor:'blue', padding:10, marginLeft:'auto', marginRight:'auto', marginBottom:20, width:120, borderRadius:6}}>
