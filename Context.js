@@ -1,8 +1,8 @@
-import React, { useState, createContext, Children } from "react";
+import React, { useState, createContext, children } from "react";
 
 const FitnessItems = createContext();
 
-const FitnnessContext = ({ Children }) => {
+const FitnnessContext = ({ children }) => {
   const [completed, setCompleted] = useState();
   const [workout, setWorkout] = useState(0);
   const [calories, setCalories] = useState(0);
@@ -21,7 +21,7 @@ const FitnnessContext = ({ Children }) => {
         setMinutes,
       }}
     >
-      {Children}
+      {children}
     </FitnessItems.Provider>
   );
 };
