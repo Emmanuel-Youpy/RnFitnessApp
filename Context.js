@@ -3,7 +3,7 @@ import React, { useState, createContext, children } from "react";
 const FitnessItems = createContext();
 
 const FitnnessContext = ({ children }) => {
-  const [completed, setCompleted] = useState();
+  const [completed, setCompleted] = useState([]);
   const [workout, setWorkout] = useState(0);
   const [calories, setCalories] = useState(0);
   const [minutes, setMinutes] = useState(0);

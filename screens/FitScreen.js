@@ -17,7 +17,7 @@ const FitScreen = () => {
   const navigation = useNavigation();
   const excersise = route.params.excersises;
   const current = excersise[index];
-  const [
+  const {
     completed,
     setCompleted,
     workout,
@@ -26,7 +26,8 @@ const FitScreen = () => {
     setCalories,
     minutes,
     setMinutes,
-  ] = useContext(FitnessItems);
+  } = useContext(FitnessItems);
+  console.log(completed, "empty");
   return (
     <SafeAreaView>
       <Image
@@ -130,6 +131,10 @@ const FitScreen = () => {
           disabled={index === 0}
           onPress={() => {
             navigation.navigate("Rest");
+            setCompleted([...completed, current.name]);
+            setWorkout(workout + 1);
+            setMinutes(minutes + 1);
+            setCalories(calories + 6.3);
 
             setTimeout(() => {
               setIndex(index - 1);
